@@ -1,0 +1,98 @@
+/* Quitar márgenes y scroll del body */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Creepster', cursive;
+    overflow: hidden; /* evita que aparezca scroll */
+}
+
+/* Video de fondo */
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;  
+    height: 100vh; 
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;       
+    background-color: black;
+    padding: 20px;     
+    box-sizing: border-box; 
+}
+
+/* Título del header */
+header h2 {
+    color: red;
+    margin: 0;
+}
+
+/* Menú */
+nav.menu ul {
+    list-style: none;
+    align-items: st;
+    margin: 0;
+    padding: 0;
+}
+
+nav.menu ul li {
+    margin-left: 20px;
+}
+
+/* Enlaces del menú: rojo constante */
+nav.menu ul li a:link,
+nav.menu ul li a:visited,
+nav.menu ul li a:hover,
+nav.menu ul li a:active {
+    color: red;
+    text-decoration: none;
+    font-family: 'Creepster', cursive;
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 0 black;
+}
+
+/* Contenedor principal */
+.contenido {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* centra vertical y horizontal */
+    text-align: center;
+    z-index: 1;
+}
+
+/* Texto de terror */
+.terror {
+    font-family: 'Creepster', cursive;
+    color: red;
+    font-size: 5rem;
+    text-shadow: 2px 2px 0 black, 0 0 10px darkred, -2px -2px 0 black;
+}
+
+/* Botón de miedo */
+.boton-miedo {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 40px;
+    font-family: 'Creepster', cursive;
+    font-size: 2rem;
+    color: #ff0000;
+    text-decoration: none;
+    border: 3px solid #ff0000;
+    border-radius: 10px;
+    text-shadow: 2px 2px 0 black, 0 0 10px darkred;
+    transition: all 0.3s ease;
+}
+
+.boton-miedo:hover {
+    background-color: rgba(255,0,0,0.2);
+    box-shadow: 0 0 20px red, 0 0 40px darkred;
+    transform: scale(1.1) rotate(-2deg);
+}
