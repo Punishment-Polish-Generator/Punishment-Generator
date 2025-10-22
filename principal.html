@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="principal">
+    <audio id="musicaFondo" autoplay loop>
+  <source src="audio/evil-laugh-multi-34044.mp3" type="audio/mpeg">
+  Tu navegador no soporta audio HTML5.
+</audio>
+
     <!-- HEADER -->
     <header>
         <h2>El rincón del dolor y la risa</h2>
@@ -114,6 +119,13 @@
             const texto = torturar();
             document.getElementById("excusa").textContent = texto;
         }
+
+        window.addEventListener('click', () => {
+    const audio = document.getElementById('musicaFondo');
+    if (audio && audio.paused) {
+      audio.play();
+    }
+  });
     </script>
 </body>
 </html>

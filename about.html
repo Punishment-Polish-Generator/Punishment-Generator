@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - El Lado Oscuro</title>
     <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="about">
+    <audio id="musicaFondo" autoplay loop>
+  <source src="audio/scary-music-box-165983.mp3" type="audio/mpeg">
+  Tu navegador no soporta audio HTML5.
+</audio>
     <!-- HEADER -->
     <header>
         <h2>Bienvenido a la Oscuridad</h2>
@@ -57,6 +62,17 @@
         <a href="index.html" class="boton-miedo">🔪 Volver al Inicio</a>
     </div>
 
+    <script>
+  window.addEventListener('click', () => {
+    const audio = document.getElementById('musicaFondo');
+    if (audio && audio.paused) {
+      audio.play();
+    }
+  });
+</script>
+
+
   
+
 </body>
 </html>
