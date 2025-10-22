@@ -28,37 +28,91 @@
         <p class="terror" id="excusa">Pulsa un botón… si te atreves </p>
 
         <div class="botones-tortura">
-            <button class="boton-miedo" onclick="generarExcusa(1)">🔪 Tortura 1</button>
-            <button class="boton-miedo" onclick="generarExcusa(2)">🩸 Tortura 2</button>
+            <button type="button" class="boton-miedo" onclick="mostrarTortura()">🔪 Tortura 1</button>
         </div>
     </div>
 
     <!-- GENERADOR -->
     <script>
-        const torturas1 = [
-            "Obligado a escuchar reguetón sin pausa durante 24 horas.",
-            "Pisar una pieza de LEGO en la oscuridad por toda la eternidad.",
-            "Tener que explicar memes a tus padres cada 5 minutos.",
-            "Ver cómo se te cae el wifi justo antes del final de la película.",
-            "Dormir en una cama llena de purpurina pegajosa."
+        const TORTURAS_LIST = [
+            'escuchar regueton',
+            'explicar memes a tus padres',
+            'hacer bootcamp',
+            'tirar cera a los ojos',
+            'clavarle cera a los ojos',
         ];
 
-        const torturas2 = [
-            "Recibir notificaciones de grupo de WhatsApp toda la noche.",
-            "Ser perseguido por un payaso que solo grita tu nombre.",
-            "Comer pizza con piña... ¡por obligación!",
-            "Escuchar el mismo anuncio de YouTube 666 veces seguidas.",
-            "Que tu móvil se quede con 1% de batería... y el cargador no funcione."
+        const PERSONAS_LIST = [
+            'tu suegra',
+            'un payaso siniestro',
+            'tu ex',
+            'un vendedor de seguros',
+            'politico corrupto (por defecto de derechas)',
         ];
 
-        function generarExcusa(tipo) {
-            let excusa = "";
-            if (tipo === 1) {
-                excusa = torturas1[Math.floor(Math.random() * torturas1.length)];
-            } else {
-                excusa = torturas2[Math.floor(Math.random() * torturas2.length)];
-            }
-            document.getElementById("excusa").textContent = excusa;
+        const TOOLS_LIST = [
+            'un microscopio',
+            'un altavoz gigante',
+            'agujas',
+            'martillo',
+            'un ordenador lento',
+        ];
+
+        const PARTS_LIST = [
+            'oidos',
+            'genitales',
+            'ojos',
+            'yemas de los dedos',
+            'la dignidad',
+        ];
+
+        const TIME_LIST = [
+            '5 minutos',
+            'una hora',
+            'toda la noche',
+            '24 horas',
+            'toda una vida',
+        ];
+
+        const getIsPersona = () => {
+            const index = Math.floor(Math.random() * PERSONAS_LIST.length);
+            return PERSONAS_LIST[index];
+        };
+
+        const getTools = () => {  
+            const index = Math.floor(Math.random() * TOOLS_LIST.length);
+            return TOOLS_LIST[index];
+        };
+
+        const getPart = () => {
+            const index = Math.floor(Math.random() * PARTS_LIST.length);
+            return PARTS_LIST[index];
+        };
+
+        const getTime = () => {
+            const index = Math.floor(Math.random() * TIME_LIST.length);
+            return TIME_LIST[index];
+        };
+
+        const getTortura = () => {
+            const index = Math.floor(Math.random() * TORTURAS_LIST.length);
+            return TORTURAS_LIST[index];
+        };
+
+        const torturar = () => {
+            const IsPersona = getIsPersona();
+            const Tolls = getTools();  
+            const part = getPart();
+            const time = getTime();
+            const tortura = getTortura();
+            
+            return `Te va a torturar ${IsPersona} con ${Tolls} en ${part} durante ${time} obligándote a: ${tortura}`;
+        };
+
+        
+        function mostrarTortura() {
+            const texto = torturar();
+            document.getElementById("excusa").textContent = texto;
         }
     </script>
 </body>
