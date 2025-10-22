@@ -97,3 +97,20 @@ nav.menu ul li a:active {
     box-shadow: 0 0 20px red, 0 0 40px darkred;
     transform: scale(1.1) rotate(-2deg);
 }
+
+
+.contenedor-imagenes {
+        display: flex; 
+        justify-content: center; 
+        gap: 20px; 
+        width: 100%; 
+        padding: 10px;
+    }
+
+    
+    .contenedor-imagenes img {
+        width: 30%; 
+        max-width: 300px; 
+        height: auto;
+        border: 2px solid #ccc; 
+    }
