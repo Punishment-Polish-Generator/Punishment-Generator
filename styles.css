@@ -4,7 +4,7 @@ body {
     padding: 0;
     font-family: 'Creepster', cursive;
     overflow: hidden; /* evita que aparezca scroll */
-    cursor: url('imagenes/foo439.cur') 16 16, auto;
+    cursor: url('imagenes/knife.png') 4 4, auto;
     overflow-y: auto;
 }
 

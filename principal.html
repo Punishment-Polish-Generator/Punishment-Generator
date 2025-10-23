@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="principal">
+    <audio id="musicaFondo" autoplay loop>
+  <source src="audio/evil-laugh-multi-34044.mp3" type="audio/mpeg">
+  Tu navegador no soporta audio HTML5.
+</audio>
+
     <!-- HEADER -->
     <header>
         <h2>El rincón del dolor y la risa</h2>
@@ -15,6 +20,8 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
+                <li><a href="principal.html">Juego principal</a></li>
+                <li><a href="parejas.html">Juego parejas</a></li>
             </ul>
         </nav>
     </header>
@@ -28,7 +35,7 @@
         <p class="terror" id="excusa">Pulsa un botón… si te atreves </p>
 
         <div class="botones-tortura">
-            <button type="button" class="boton-miedo" onclick="mostrarTortura()">🔪 Tortura 1</button>
+            <button type="button" class="boton-miedo" onclick="mostrarTortura()">🔪 Tortura </button>
         </div>
     </div>
 
@@ -114,6 +121,15 @@
             const texto = torturar();
             document.getElementById("excusa").textContent = texto;
         }
+
+        window.addEventListener('click', () => {
+    const audio = document.getElementById('musicaFondo');
+    if (audio && audio.paused) {
+      audio.play();
+    }
+  });
+  
+  
     </script>
 </body>
 </html>

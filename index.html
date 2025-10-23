@@ -12,12 +12,21 @@
 </head>
 <body>
 
+    <audio id="musicaFondo" autoplay loop>
+    <source src="audio/scary-music-box-165983.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio HTML5.
+</audio>
+   
+
+
    <header>
         <h2>Bienvenido al Mundo del Horror</h2>
         <nav class="menu">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
+                <li><a href="principal.html">Juego principal</a></li>
+                <li><a href="parejas.html">Juego parejas</a></li>
             </ul>
         </nav>
     </header>
@@ -26,13 +35,21 @@
 
     <!-- Contenido principal -->
     <div class="contenido">
-        <h1 class="terror">Bienvenido</h1>
-        <p class="terror">Solo los valientes se atreven a entrar...</p>
+        <h1 class="terror">Bienvenidos</h1>
+        <p class="terror">Solo las parejas más atrevidas pueden entrar...</p>
 
         <!-- Botón de entrada terrorífico -->
         <a href="principal.html" class="boton-miedo">
             <i class="fas fa-knife"></i> Entrar
         </a>
     </div>
+    <script>
+    window.addEventListener('click', () => {
+        const audio = document.getElementById('musicaFondo');
+        if (audio.paused) {
+            audio.play();
+        }
+    });
+</script>
 </body>
 </html>
