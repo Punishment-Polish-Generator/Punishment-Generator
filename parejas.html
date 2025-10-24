@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="principal">
     <audio id="musicaFondo" autoplay loop>
-  <source src="audio/sonido_velas.mp3" type="audio/mpeg">
-  Tu navegador no soporta audio HTML5.
-</audio>
+        <source src="audio/audio_terror.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio HTML5.
+    </audio>
 
     <!-- HEADER -->
     <header>
@@ -41,7 +43,61 @@
 
     <!-- GENERADOR TORTURAS PARA PAREJAS  -->
     <script>
-        
+
+        const ACTION_LIST = ['pellizcará', 'morderá', 'lamerá', 'frotará'];
+        const BODYPART_LIST = ['la oreja', 'los pezones', 'el cuello', 'la ingle'];
+        const WHAT_LIST = ['una pluma', 'una pinza de ropa', 'un hielo', 'una bolsa de te caliente'];
+        const TIME_LIST = ['2', '3', '4', '5'];
+
+
+
+        const getRandomAction = () => {
+            const index = Math.floor(Math.random() * ACTION_LIST.length);
+            return ACTION_LIST[index];
+        }
+
+        const getRandomBodypart = () => {
+            const index = Math.floor(Math.random() * BODYPART_LIST.length);
+            return BODYPART_LIST[index];
+        }
+
+        const getRandomWhat = () => {
+            const index = Math.floor(Math.random() * WHAT_LIST.length);
+            return WHAT_LIST[index];
+        }
+
+        const getRandomTime = () => {
+            const index = Math.floor(Math.random() * TIME_LIST.length);
+            return TIME_LIST[index];
+        }
+
+
+
+        const parejaTortura = () => {
+            const action = getRandomAction();
+            const bodypart = getRandomBodypart();
+            const what = getRandomWhat();
+            const time = getRandomTime();
+            
+
+            return `Quien ha dado click ${action} ${bodypart} de su pareja con ${what} durante ${time} minutos`;
+        };
+
+        function mostrarTortura() {
+            const texto = parejaTortura();
+            document.getElementById("excusa").textContent = texto;
+        }
+
+        window.addEventListener('click', () => {
+            const audio = document.getElementById('musicaFondo');
+            if (audio && audio.paused) {
+                audio.play();
+            }
+        });
+    
+
+
     </script>
 </body>
+
 </html>
