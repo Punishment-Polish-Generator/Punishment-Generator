@@ -116,3 +116,37 @@ nav.menu ul li a:active {
             height: 200px; 
             
 }
+
+.ficha {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nombre-ficha {
+  font-family: 'Creepster', cursive;
+  color: red;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 0 black, 0 0 10px darkred;
+}
+
+.redes {
+  margin-top: 10px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.redes a {
+  color: red;
+  font-size: 1.8rem;
+  text-decoration: none;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.redes a:hover {
+  transform: scale(1.2);
+  color: darkred;
+}
