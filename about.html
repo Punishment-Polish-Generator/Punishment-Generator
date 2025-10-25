@@ -6,20 +6,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us - El Lado Oscuro</title>
   <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="about">
-  <!-- HEADER -->
-  <header>
-    <h2>Bienvenido a la Oscuridad</h2>
-    <nav class="menu">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-      </ul>
-    </nav>
-  </header>
+
+    <audio id="musicaFondo" autoplay loop>
+  <source src="audio/scary-music-box-165983.mp3" type="audio/mpeg">
+  Tu navegador no soporta audio HTML5.
+</audio>
+    <!-- HEADER -->
+    <header>
+        <h2>Bienvenido a la Oscuridad</h2>
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="principal.html">Juego principal</a></li>
+                <li><a href="parejas.html">Juego parejas</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
 
   <!-- VIDEO DE FONDO -->
   <video id="bg-video" src="imagenes/velas.mp4" autoplay muted loop playsinline></video>
@@ -35,17 +45,64 @@
     </p>
 
     <div class="contenedor-fichas">
-      <img class="ficha-interactiva" id="ficha_karol" src="imagenes/ficha_karol_1.png" alt="Ficha Karol">
 
-      <img class="ficha-interactiva" id="ficha_fer" src="imagenes/ficha_fer_1.png" alt="Ficha Fer">
-
-      <img class="ficha-interactiva" id="ficha_yova" src="imagenes/ficha_Yova_1.png" alt="Ficha Yova">
-
-      <img class="ficha-interactiva" id="ficha_raul" src="imagenes/ficha_raul_1.png" alt="Ficha Raul">
+  
+  <div class="ficha">
+    <p class="nombre-ficha">Karol</p>
+    <img class="ficha-interactiva" id="ficha_karol" src="imagenes/ficha_karol_1.png" alt="Ficha Karol">
+    <div class="redes">
+      <a href="https://www.linkedin.com/in/karol-kusmierz-b620b1367/" target="_blank" aria-label="LinkedIn Karol">
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+      <a href="https://github.com/karolkusmi" target="_blank" aria-label="GitHub Karol">
+        <i class="fa-brands fa-github"></i>
+      </a>
     </div>
-
-    <a href="index.html" class="boton-miedo">🔪 Volver al Inicio</a>
   </div>
+
+  
+  <div class="ficha">
+    <p class="nombre-ficha">Fer</p>
+    <img class="ficha-interactiva" id="ficha_fer" src="imagenes/ficha_fer_1.png" alt="Ficha Fer">
+    <div class="redes">
+      <a href="https://www.linkedin.com/in/fernando-david-del-rio-96b71168/" target="_blank" aria-label="LinkedIn Fer">
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+      <a href="https://github.com/fernando-delrio" target="_blank" aria-label="GitHub Fer">
+        <i class="fa-brands fa-github"></i>
+      </a>
+    </div>
+  </div>
+
+  
+  <div class="ficha">
+    <p class="nombre-ficha">Yova</p>
+    <img class="ficha-interactiva" id="ficha_yova" src="imagenes/ficha_Yova_1.png" alt="Ficha Yova">
+    <div class="redes">
+      <a href="https://www.linkedin.com/in/yova-linkedin" target="_blank" aria-label="LinkedIn Yova">
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+      <a href="https://github.com/yova-github" target="_blank" aria-label="GitHub Yova">
+        <i class="fa-brands fa-github"></i>
+      </a>
+    </div>
+  </div>
+
+  
+  <div class="ficha">
+    <p class="nombre-ficha">Raul</p>
+    <img class="ficha-interactiva" id="ficha_raul" src="imagenes/ficha_raul_1.png" alt="Ficha Raul">
+    <div class="redes">
+      <a href="https://www.linkedin.com/in/raul-linkedin" target="_blank" aria-label="LinkedIn Raul">
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+      <a href="https://github.com/raul-github" target="_blank" aria-label="GitHub Raul">
+        <i class="fa-brands fa-github"></i>
+      </a>
+    </div>
+  </div>
+
+</div>
 
 
 
