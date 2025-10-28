@@ -37,68 +37,14 @@
         <p class="terror" id="excusa">Pulsar un botón… si os atreveis </p>
 
         <div class="botones-tortura">
-            <button type="button" class="boton-miedo" onclick="mostrarTortura()">🔪 Tortura </button>
+            <button type="button" class="boton-miedo" onclick="mostrarPtortura()">🔪 Tortura </button>
         </div>
     </div>
 
-    <!-- GENERADOR TORTURAS PARA PAREJAS  -->
-    <script>
-
-        const ACTION_LIST = ['pellizcará', 'morderá', 'lamerá', 'frotará', 'hurgará'];
-        const BODYPART_LIST = ['la oreja', 'los pezones', 'la planta de los pies', 'la ingle', 'el cuello'];
-        const WHAT_LIST = ['una pluma', 'una pinza de ropa', 'un hielo', 'una cucharilla fria', 'un palillo de dientes'];
-        const TIME_LIST = ['2', '3', '4', '5', '10'];
+   
 
 
-
-        const getRandomAction = () => {
-            const index = Math.floor(Math.random() * ACTION_LIST.length);
-            return ACTION_LIST[index];
-        }
-
-        const getRandomBodypart = () => {
-
-            const index = Math.floor(Math.random() * BODYPART_LIST.length);
-            return BODYPART_LIST[index];
-        }
-
-        const getRandomWhat = () => {
-            const index = Math.floor(Math.random() * WHAT_LIST.length);
-            return WHAT_LIST[index];
-        }
-
-        const getRandomTime = () => {
-            const index = Math.floor(Math.random() * TIME_LIST.length);
-            return TIME_LIST[index];
-        }
-
-
-
-        const parejaTortura = () => {
-            const action = getRandomAction();
-            const bodypart = getRandomBodypart();
-            const what = getRandomWhat();
-            const time = getRandomTime();
-            
-
-            return `Quien ha dado click ${action} ${bodypart} de su pareja con ${what} durante ${time} minutos`;
-        };
-
-        function mostrarTortura() {
-            const texto = parejaTortura();
-            document.getElementById("excusa").textContent = texto;
-        }
-
-        window.addEventListener('click', () => {
-            const audio = document.getElementById('musicaFondo');
-            if (audio && audio.paused) {
-                audio.play();
-            }
-        });
-    
-
-
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>

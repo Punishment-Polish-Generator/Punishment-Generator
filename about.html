@@ -106,36 +106,7 @@
 
 
 
-  <script>
-    
-function alternarFicha(imagen) {
-    
-    const srcActual = imagen.src;
-
-   
-    if (srcActual.includes("_1.png")) {
-        
-        imagen.src = srcActual.replace("_1.png", "_2.png");
-    } else if (srcActual.includes("_2.png")) {
-       
-        imagen.src = srcActual.replace("_2.png", "_1.png");
-    }
-}
-
-
-
-const todasLasFichas = document.querySelectorAll('.ficha-interactiva');
-
-
-todasLasFichas.forEach(ficha => {
-    
-    ficha.addEventListener('click', function() {
-        
-        alternarFicha(ficha);
-    });
-});
-
-  </script>
+  <script src="script.js"></script>
 
 </body>
 
