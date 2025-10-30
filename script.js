@@ -1,6 +1,13 @@
 //-- GENERADOR TORTURA ESTANDAR -->
+const getRandomItem = (list) => {
+    const index = Math.floor(Math.random() * list.length);
+    return list[index];
+};
 
-const TORTURAS_LIST = [
+
+// === Generador de Tortura Estándar ===
+
+const STANDARD_TORTURES = [
     'escuchar regueton',
     'explicar memes a tus padres',
     'darle la razón',
@@ -8,7 +15,7 @@ const TORTURAS_LIST = [
     'dar descargas electricas',
 ];
 
-const PERSONAS_LIST = [
+const STANDARD_PERSONS = [
     'tu suegra',
     'un payaso siniestro',
     'tu ex',
@@ -16,7 +23,7 @@ const PERSONAS_LIST = [
     'un politico corrupto (por defecto de derechas)',
 ];
 
-const TOOLS_LIST = [
+const STANDARD_TOOLS = [
     'un martillo',
     'unas tijeras oxidadas',
     'polvos picapica',
@@ -24,7 +31,7 @@ const TOOLS_LIST = [
     'pinzas para ropa',
 ];
 
-const PARTS_LIST = [
+const STANDARD_BODY_PARTS = [
     'la parte baja de la espalda 🍑',
     'tus partes nobles',
     'los ojos',
@@ -32,7 +39,7 @@ const PARTS_LIST = [
     'los pezones',
 ];
 
-const TIME_LIST = [
+const STANDARD_TIMES = [
     '5 minutos',
     'una hora',
     'toda la noche',
@@ -40,140 +47,83 @@ const TIME_LIST = [
     'toda una vida',
 ];
 
-const getIsPersona = () => {
-    const index = Math.floor(Math.random() * PERSONAS_LIST.length);
-    return PERSONAS_LIST[index];
+
+const standardTorture = () => {
+    const person = getRandomItem(STANDARD_PERSONS);
+    const tool = getRandomItem(STANDARD_TOOLS);
+    const part = getRandomItem(STANDARD_BODY_PARTS);
+    const time = getRandomItem(STANDARD_TIMES);
+    const torture = getRandomItem(STANDARD_TORTURES);
+
+    return `Te torturará ${person} con ${tool} en ${part} durante ${time} obligándote a ${torture}`;
 };
 
-const getTools = () => {
-    const index = Math.floor(Math.random() * TOOLS_LIST.length);
-    return TOOLS_LIST[index];
-};
-
-const getPart = () => {
-    const index = Math.floor(Math.random() * PARTS_LIST.length);
-    return PARTS_LIST[index];
-};
-
-const getTime = () => {
-    const index = Math.floor(Math.random() * TIME_LIST.length);
-    return TIME_LIST[index];
-};
-
-const getTortura = () => {
-    const index = Math.floor(Math.random() * TORTURAS_LIST.length);
-    return TORTURAS_LIST[index];
-};
-
-const torturar = () => {
-    const IsPersona = getIsPersona();
-    const Tolls = getTools();
-    const part = getPart();
-    const time = getTime();
-    const tortura = getTortura();
-
-    return `Te torturará ${IsPersona} con ${Tolls} en ${part} durante ${time} obligándote a ${tortura}`;
-};
 
 
 function mostrarTortura() {
-    const texto = torturar();
-    document.getElementById("excusa").textContent = texto;
+    const text = standardTorture();
+    const element = document.getElementById("excusa");
+    if (element) {
+        element.textContent = text;
+    }
 }
 
 
+// === Generador de Tortura para Parejas ===
 
-// -- GENERADOR TORTURAS PAREJAS  --
-
-
-const ACTION_LIST = ['pellizcará', 'morderá', 'lamerá', 'frotará', 'hurgará'];
-const BODYPART_LIST = ['la oreja', 'los pezones', 'la planta de los pies', 'la ingle', 'el cuello'];
-const WHAT_LIST = ['una pluma', 'una pinza de ropa', 'un hielo', 'una cucharilla fria', 'un palillo de dientes'];
-const PTIME_LIST = ['2', '3', '4', '5', '10'];
+const COUPLE_ACTIONS = ['pellizcará', 'morderá', 'lamerá', 'frotará', 'hurgará'];
+const COUPLE_BODY_PARTS = ['la oreja', 'los pezones', 'la planta de los pies', 'la ingle', 'el cuello'];
+const COUPLE_TOOLS = ['una pluma', 'una pinza de ropa', 'un hielo', 'una cucharilla fria', 'un palillo de dientes'];
+const COUPLE_TIMES_MINUTES = ['2', '3', '4', '5', '10'];
 
 
 
-const getRandomAction = () => {
-    const index = Math.floor(Math.random() * ACTION_LIST.length);
-    return ACTION_LIST[index];
-}
+const parejaTorture = () => {
+    const action = getRandomItem(COUPLE_ACTIONS);
+    const bodypart = getRandomItem(COUPLE_BODY_PARTS);
+    const tool = getRandomItem(COUPLE_TOOLS);
+    const timeInMinutes = getRandomItem(COUPLE_TIMES_MINUTES);
 
-const getRandomBodypart = () => {
-
-    const index = Math.floor(Math.random() * BODYPART_LIST.length);
-    return BODYPART_LIST[index];
-}
-
-const getRandomWhat = () => {
-    const index = Math.floor(Math.random() * WHAT_LIST.length);
-    return WHAT_LIST[index];
-}
-
-const getRandomTime = () => {
-    const index = Math.floor(Math.random() * PTIME_LIST.length);
-    return PTIME_LIST[index];
-}
-
-
-
-const parejaTortura = () => {
-    const action = getRandomAction();
-    const bodypart = getRandomBodypart();
-    const what = getRandomWhat();
-    const ptime = getRandomTime();
-
-
-    return `Quien ha dado click ${action} ${bodypart} de su pareja con ${what} durante ${ptime} minutos`;
+    return `Quien ha dado click ${action} ${bodypart} de su pareja con ${tool} durante ${timeInMinutes} minutos`;
 };
 
 function mostrarPtortura() {
-    const texto = parejaTortura();
-    document.getElementById("excusa").textContent = texto;
+    const text = parejaTorture();
+    const element = document.getElementById("excusa");
+    if (element) {
+        element.textContent = text;
+    }
 }
 
-window.addEventListener('click', () => {
+
+
+const handleAudioPlay = () => {
     const audio = document.getElementById('musicaFondo');
     if (audio && audio.paused) {
         audio.play();
     }
-});
+}
 
 
+window.addEventListener('click', handleAudioPlay);
 
-window.addEventListener('click', () => {
-    const audio = document.getElementById('musicaFondo');
-    if (audio.paused) {
-        audio.play();
-    }
-});
-
-
-//  ABOUT
 
 
 function alternarFicha(imagen) {
-    
-    const srcActual = imagen.src;
-
-   
-    if (srcActual.includes("_1.png")) {
-        
-        imagen.src = srcActual.replace("_1.png", "_2.png");
-    } else if (srcActual.includes("_2.png")) {
-       
-        imagen.src = srcActual.replace("_2.png", "_1.png");
+    const currentSrc = imagen.src;
+    if (currentSrc.includes("_1.png")) {
+        imagen.src = currentSrc.replace("_1.png", "_2.png");
+    } else if (currentSrc.includes("_2.png")) {
+        imagen.src = currentSrc.replace("_2.png", "_1.png");
     }
 }
 
 
+const totalFichas = document.querySelectorAll('.ficha-interactiva');
 
-const todasLasFichas = document.querySelectorAll('.ficha-interactiva');
 
-
-todasLasFichas.forEach(ficha => {
-    
-    ficha.addEventListener('click', function() {
-        
-        alternarFicha(ficha);
+totalFichas.forEach(card => {
+    card.addEventListener('click', function() {
+        alternarFicha(card);
     });
 });
